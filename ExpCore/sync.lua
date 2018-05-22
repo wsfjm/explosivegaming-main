@@ -172,7 +172,7 @@ function Sync.info(set)
     if not global.exp_core then global.exp_core = {} end
     if not global.exp_core.sync then global.exp_core.sync = {
         server_name='Factorio Server',
-        server_description='A factorio server for everyone',
+        server_description='适合每个人的 异星工厂服务器',
         reset_time='On Demand',
         time='Day Mth 00 00:00:00 UTC Year',
         time_set=Sync.tick_format(0),
@@ -280,13 +280,13 @@ end
 
 -- Examples for Sync.add_to_gui
 -- adds a basic string to the table
-Sync.add_to_gui('Welcome to the Explosive Gaming comunity! This is one of many servers which we host.')
+Sync.add_to_gui('欢迎来到 Explosive Gaming comunity! 这是我们托管的许多服务器之一.')
 -- adds a string that can have depentant values
 Sync.add_to_gui(function(player,frame)
-    return 'You have been assigned the rank \''..Ranking.get_rank(player).name..'\''
+    return '你已经被分配 rank \''..Ranking.get_rank(player).name..'\''
 end)
 Sync.add_to_gui(function(player,frame)
-    return 'This server will reset at: '..Sync.info().reset_time
+    return '服务器重置时间: '..Sync.info().reset_time
 end)
 -- if readme is included then see addons/guis/readme.lua for more examples
 
@@ -310,7 +310,7 @@ function Sync._load()
             Gui.bar(_flow,200)
             label_format(_flow.add{
                 type='label',
-                caption='Welcome To '..info.server_name,
+                caption='欢迎 '..info.server_name,
                 style='caption_label'
             },180)
             Gui.bar(_flow,200)
@@ -344,7 +344,7 @@ function Sync._load()
             end
             _frame.add{
                 type='label',
-                caption='Press Ecs or E to close; this is only visible once!',
+                caption='按下Esc或E关闭; 这只能看到一次!',
                 style='fake_disabled_label'
             }.style.font='default-small'
     end}
